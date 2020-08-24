@@ -1,0 +1,14 @@
+[requires]
+catch2/2.13.0
+
+[generators]
+virtualenv
+cmake
+cmake_paths
+cmake_find_package
+
+[build_requires]
+cmake/[>=3.16.3]
+
+
+
