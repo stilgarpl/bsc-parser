@@ -116,8 +116,7 @@ namespace bsc {
             void addUsage(std::string usage);
 
             void addDoc(std::string doc);
-            void addArgument(ArgumentParser::ArgumentParseFunc parserFunction,
-                             std::optional<std::string> argumentName = std::nullopt);
+            void addArgument(ArgumentParser::ArgumentParseFunc parserFunction, std::optional<std::string> argumentName = std::nullopt);
 
             std::shared_ptr<ArgumentParser> make();
 
@@ -278,9 +277,7 @@ namespace bsc {
                     // overwrite.
                     if constexpr (IsContainerNotString<T>) {
                         auto tempValue = parser.fromString<T>(text);
-                        std::for_each(tempValue.begin(), tempValue.end(), [this](auto& i) {
-                            value->insert(value->end(), i);
-                        });
+                        std::for_each(tempValue.begin(), tempValue.end(), [this](auto& i) { value->insert(value->end(), i); });
                     } else {
                         value = parser.fromString<T>(text);
                     }

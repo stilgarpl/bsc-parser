@@ -35,7 +35,7 @@ TEST_CASE("FromString parser test") {
                                Catch::Matchers::Message("Integer parsing failed for value: qqq"));
     }
     SECTION("Custom parser configuration") {
-        Parser parser({.csvDelimiter = ';',.pairDelimiter='@'});
+        Parser parser({.csvDelimiter = ';', .pairDelimiter = '@'});
         int five         = parser.fromString<int>("5");
         float sixAndHalf = parser.fromString<float>("6.5");
         std::string text = parser.fromString<std::string>("text");
@@ -59,5 +59,4 @@ TEST_CASE("FromString parser test") {
                                StringParseException,
                                Catch::Matchers::Message("Integer parsing failed for value: qqq"));
     }
-
 }
